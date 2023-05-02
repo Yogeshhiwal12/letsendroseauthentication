@@ -10,6 +10,8 @@ module.exports = (req, res, next) => {
   if (parts.length !== 2) return res.status(401).json({ message: "Token error" });
 
   const [scheme, token] = parts;
+  console.log("Received token:", token);
+
 
   if (!/^Bearer$/i.test(scheme)) return res.status(401).json({ message: "Malformed token" });
 
